@@ -1,6 +1,10 @@
 /**
  * presentation.js - LegitBlock 3D Cybernetic Presentation Orchestrator
  * Integrates impress.js 3D navigation with @tekromancy/tekromancy visual FX engines.
+ * 
+ * Progressive Intensity Curve:
+ * Starts subtle and clean for early stations (00-02), expands into element mechanics (03-06),
+ * and escalates to maximum intensity, screen impacts, and multi-element storms at the climax (07-10).
  */
 
 import { TekromancyFX, StationFXController } from '@tekromancy/tekromancy';
@@ -8,22 +12,43 @@ import '@tekromancy/tekromancy/tekromancy.css';
 
 /**
  * Slide / Station Effect Intensity Mapping (Scale: 1 to 100)
- * Tailored to each stage of the LegitBlock cryptographic lifecycle.
+ * Toned down at start (gentle atmosphere) -> Ramped up towards the end (high-energy climax).
  */
 const stationController = new StationFXController({
-  'legitblock-portal': { lightning: 45, plasma: 35 },
-  'station-manifesto': { lightning: 75, fire: 25, plasma: 40 },
-  'station-immutable-ledger': { lightning: 80, plasma: 60 },
-  'station-diff-engine': { fire: 85, smoke: 50 },
-  'station-voting-governance': { plasma: 90, lightning: 40 },
-  'station-templates': { ice: 70, water: 60 },
-  'station-enterprise-ldap': { lightning: 50, plasma: 75 },
-  'station-tamper-defense': { lightning: 95, fire: 70 },
-  'station-unified-demo': { lightning: 75, fire: 60, plasma: 70, ice: 50 },
-  'station-quickstart': { water: 70, lightning: 50 },
-  'overview': { lightning: 65, plasma: 55, fire: 35 }
+  // Station 00: Clean, serene genesis entrance
+  'legitblock-portal': { lightning: 12, plasma: 10 },
+
+  // Station 01: Minimal, crisp introduction to the corporate manifesto
+  'station-manifesto': { lightning: 18, plasma: 15 },
+
+  // Station 02: Introduction of cryptographic block hashing & SHA-256 mining
+  'station-immutable-ledger': { lightning: 30, plasma: 25 },
+
+  // Station 03: Document diff engine - gentle warm ember glow
+  'station-diff-engine': { fire: 40, smoke: 25 },
+
+  // Station 04: Governance & voting quorum - ionized plasma arcs
+  'station-voting-governance': { plasma: 55, lightning: 20 },
+
+  // Station 05: 32 Organization templates - crisp sub-zero frost crystallization
+  'station-templates': { ice: 60, water: 35 },
+
+  // Station 06: Enterprise LDAP directory authentication
+  'station-enterprise-ldap': { plasma: 70, lightning: 45 },
+
+  // Station 07: Hostile tamper defense alarm - intense high-voltage lightning & fire alarm
+  'station-tamper-defense': { lightning: 95, fire: 80 },
+
+  // Station 08: Full architectural stack - multi-element storm
+  'station-unified-demo': { lightning: 85, fire: 75, plasma: 80, ice: 65, water: 50 },
+
+  // Station 09: Developer quickstart - dynamic fluid rain & electricity
+  'station-quickstart': { water: 75, lightning: 65, plasma: 60 },
+
+  // Station 10: 3D Constellation overview - grand celestial overview
+  'overview': { lightning: 80, plasma: 75, fire: 50 }
 }, {
-  defaultSettings: { lightning: 50 }
+  defaultSettings: { lightning: 25 }
 });
 
 window.stationController = stationController;
@@ -183,13 +208,14 @@ function initShowcase() {
     });
   }
 
-  // Gateway Warp Plunge (Station 00 -> Station 01)
+  // Smooth gateway entry plunge
   function triggerWarpPlunge() {
     if (window.soundEngine) {
       window.soundEngine.initContext();
-      window.soundEngine.playHyperWarp();
+      window.soundEngine.playWhoosh();
     }
-    tekromancyFX.storm({ lightning: 90, plasma: 80 }, 2800);
+    // Subtle initial transition
+    tekromancyFX.storm({ lightning: 25, plasma: 20 }, 2200);
     api.goto('station-manifesto');
   }
 
@@ -209,8 +235,6 @@ function initShowcase() {
     previousStepId = event.target.id;
     const nextStep = event.detail?.next;
     const nextStepId = nextStep?.id;
-    const isWarp = previousStepId === 'legitblock-portal' && nextStepId === 'station-manifesto';
-    const duration = isWarp ? 2600 : (event.detail?.transitionDuration || 1800);
 
     if (window.cyberCanvas) {
       window.cyberCanvas.setActiveStation(nextStepId);
@@ -218,33 +242,35 @@ function initShowcase() {
     }
 
     const fxConfig = stationController.get(nextStep || nextStepId);
+    const nextIndex = steps.findIndex(s => s.id === nextStepId);
 
+    // Progressive transition duration:
+    // Early slides transition smoothly (1400ms - 1800ms)
+    // Climax slides have expansive, sweeping transitions (2200ms - 2800ms)
+    const duration = nextIndex >= 7 ? 2600 : (nextIndex >= 4 ? 2000 : 1600);
+
+    // Trigger multi-element storm tailored to incoming station
     tekromancyFX.storm(fxConfig, duration);
 
+    // Audio accompaniment scaled by progressive intensity
     if (window.soundEngine) {
-      if (isWarp) {
-        window.soundEngine.playHyperWarp();
+      if (fxConfig.lightning && fxConfig.lightning > 40) {
+        window.soundEngine.playThunderCrack((fxConfig.lightning / 100) * 0.9);
+      } else if (fxConfig.fire && fxConfig.fire > 35) {
+        window.soundEngine.playFireCrackle((fxConfig.fire / 100) * 0.85);
+      } else if (fxConfig.plasma && fxConfig.plasma > 35) {
+        window.soundEngine.playPlasmaHum((fxConfig.plasma / 100) * 0.85);
+      } else if (fxConfig.water && fxConfig.water > 35) {
+        window.soundEngine.playWaterSplash((fxConfig.water / 100) * 0.85);
+      } else if (fxConfig.ice && fxConfig.ice > 35) {
+        window.soundEngine.playIceFreeze((fxConfig.ice / 100) * 0.85);
       } else {
-        if (fxConfig.lightning && fxConfig.lightning > 20) {
-          window.soundEngine.playThunderCrack(fxConfig.lightning / 100);
-        } else if (fxConfig.fire && fxConfig.fire > 20) {
-          window.soundEngine.playFireCrackle(fxConfig.fire / 100);
-        } else if (fxConfig.plasma && fxConfig.plasma > 20) {
-          window.soundEngine.playPlasmaHum(fxConfig.plasma / 100);
-        } else if (fxConfig.smoke && fxConfig.smoke > 20) {
-          window.soundEngine.playSmokeHiss(fxConfig.smoke / 100);
-        } else if (fxConfig.water && fxConfig.water > 20) {
-          window.soundEngine.playWaterSplash(fxConfig.water / 100);
-        } else if (fxConfig.ice && fxConfig.ice > 20) {
-          window.soundEngine.playIceFreeze(fxConfig.ice / 100);
-        } else {
-          window.soundEngine.playWhoosh();
-        }
+        window.soundEngine.playWhoosh();
       }
     }
   });
 
-  // Slide Transition Arrival: updates HUD, triggers impacts & card encircle
+  // Slide Transition Arrival: updates HUD, triggers progressive impacts
   document.addEventListener('impress:stepenter', (event) => {
     const activeStep = event.target;
     const stepId = activeStep.id;
@@ -277,31 +303,36 @@ function initShowcase() {
       jumpMenu.value = stepId;
     }
 
-    // SPECIAL WARP SLAM: Arriving at Station 01 from Station 00
-    if (stepId === 'station-manifesto' && previousStepId === 'legitblock-portal') {
+    // Progressive arrival effects:
+    // Stations 00-03: Very light, subtle flash (or none)
+    // Stations 04-06: Mild energy presence
+    // Stations 07-10: High-intensity screen flash, shockwave shake, and dramatic lightning strikes
+    if (stepId === 'station-tamper-defense') {
+      // Climax tamper alarm
       if (tekromancyFX.lightning) {
-        tekromancyFX.lightning.flash(0.9, 300);
-        tekromancyFX.lightning.strike(window.innerWidth * 0.5, 0, window.innerWidth * 0.5, window.innerHeight * 0.45);
+        tekromancyFX.lightning.flash(0.95, 260);
       }
-
       if (flashOverlay) {
         flashOverlay.classList.add('flash');
-        setTimeout(() => flashOverlay.classList.remove('flash'), 150);
+        setTimeout(() => flashOverlay.classList.remove('flash'), 160);
       }
-
       if (window.soundEngine) {
         window.soundEngine.playSlamImpact();
       }
-
       document.body.classList.add('screen-impact-shake');
-      setTimeout(() => document.body.classList.remove('screen-impact-shake'), 750);
-
-      activeStep.classList.add('slam-wiggle');
-      setTimeout(() => activeStep.classList.remove('slam-wiggle'), 900);
-    } else if (stepId !== 'legitblock-portal') {
+      setTimeout(() => document.body.classList.remove('screen-impact-shake'), 650);
+    } else if (stepId === 'overview') {
+      // Grand overview arrival: wide celestial flash
+      if (tekromancyFX.lightning) {
+        tekromancyFX.lightning.flash(0.7, 200);
+      }
+      if (window.soundEngine) {
+        window.soundEngine.playWhoosh();
+      }
+    } else if (stepIndex >= 4) {
       const fxConfig = stationController.get(activeStep);
-      if (fxConfig.lightning && tekromancyFX.lightning) {
-        tekromancyFX.lightning.flash(0.3 + (fxConfig.lightning / 100) * 0.4, 150);
+      if (fxConfig.lightning && tekromancyFX.lightning && fxConfig.lightning > 30) {
+        tekromancyFX.lightning.flash((fxConfig.lightning / 100) * 0.45, 120);
       }
     }
   });
@@ -337,19 +368,18 @@ function initShowcase() {
   // Station 01: Manifesto
   bindBtn('btn-test-manifesto-fx', () => {
     tekromancyFX.storm({
-      lightning: 75,
-      plasma: 65,
-      fire: 40
-    }, 2500);
-    if (window.soundEngine) window.soundEngine.playThunderCrack(0.8);
+      lightning: 35,
+      plasma: 30
+    }, 1800);
+    if (window.soundEngine) window.soundEngine.playThunderCrack(0.5);
   });
 
   bindBtn('btn-manifesto-encircle', () => {
     const cards = document.querySelectorAll('#station-manifesto .cyber-card');
-    if (cards[0]) tekromancyFX.encircle(cards[0], 'lightning', { duration: 2000 });
-    if (cards[1]) tekromancyFX.encircle(cards[1], 'plasma', { duration: 2000 });
-    if (cards[2]) tekromancyFX.encircle(cards[2], 'fire', { duration: 2000 });
-    if (window.soundEngine) window.soundEngine.playPlasmaHum(0.9);
+    if (cards[0]) tekromancyFX.encircle(cards[0], 'lightning', { duration: 1600 });
+    if (cards[1]) tekromancyFX.encircle(cards[1], 'plasma', { duration: 1600 });
+    if (cards[2]) tekromancyFX.encircle(cards[2], 'fire', { duration: 1600 });
+    if (window.soundEngine) window.soundEngine.playPlasmaHum(0.6);
   });
 
   // Station 02: Ledger
@@ -358,14 +388,14 @@ function initShowcase() {
     const rect = card ? card.getBoundingClientRect() : { left: window.innerWidth * 0.5, top: window.innerHeight * 0.5, width: 0, height: 0 };
     const targetX = rect.left + rect.width * 0.5;
     const targetY = rect.top + rect.height * 0.5;
-    tekromancyFX.lightning?.strike(window.innerWidth * (0.2 + Math.random() * 0.6), 0, targetX, targetY);
-    if (window.soundEngine) window.soundEngine.playThunderCrack(1.0);
-    tekromancyFX.encircle('#ledger-demo-card', 'lightning', { duration: 1800 });
+    tekromancyFX.lightning?.strike(window.innerWidth * (0.3 + Math.random() * 0.4), 0, targetX, targetY);
+    if (window.soundEngine) window.soundEngine.playThunderCrack(0.7);
+    tekromancyFX.encircle('#ledger-demo-card', 'lightning', { duration: 1600 });
   });
 
   bindBtn('btn-ledger-encircle', () => {
-    tekromancyFX.encircle('#ledger-demo-card', 'lightning', { duration: 2200 });
-    if (window.soundEngine) window.soundEngine.playThunderCrack(0.6);
+    tekromancyFX.encircle('#ledger-demo-card', 'lightning', { duration: 1800 });
+    if (window.soundEngine) window.soundEngine.playThunderCrack(0.5);
   });
 
   // Station 03: Diff Engine
@@ -374,36 +404,37 @@ function initShowcase() {
     const rect = card ? card.getBoundingClientRect() : { left: window.innerWidth * 0.5, top: window.innerHeight * 0.5, width: 0, height: 0 };
     const cx = rect.left + rect.width * 0.5;
     const cy = rect.top + rect.height * 0.5;
-    tekromancyFX.fire?.burst(cx, cy, 60, { theme: 'fire' });
-    tekromancyFX.smoke?.burst(cx, cy - 30, 25);
-    if (window.soundEngine) window.soundEngine.playFireCrackle(0.9);
+    tekromancyFX.fire?.burst(cx, cy, 45, { theme: 'amber' });
+    tekromancyFX.smoke?.burst(cx, cy - 20, 20);
+    if (window.soundEngine) window.soundEngine.playFireCrackle(0.7);
   });
 
   bindBtn('btn-diff-encircle', () => {
-    tekromancyFX.encircle('#diff-demo-card', 'fire', { duration: 2000 });
-    if (window.soundEngine) window.soundEngine.playFireCrackle(0.7);
+    tekromancyFX.encircle('#diff-demo-card', 'fire', { duration: 1800 });
+    if (window.soundEngine) window.soundEngine.playFireCrackle(0.6);
   });
 
   // Station 04: Governance & Quorum
   bindBtn('btn-voting-cast-vote', () => {
     const card = document.getElementById('voting-demo-card');
     const rect = card ? card.getBoundingClientRect() : { left: window.innerWidth * 0.5, top: window.innerHeight * 0.5, width: 0, height: 0 };
-    tekromancyFX.plasma?.strikeOrb(rect.left + rect.width * 0.5, rect.top + rect.height * 0.5, 45);
-    if (window.soundEngine) window.soundEngine.playPlasmaHum(1.0);
+    tekromancyFX.plasma?.strikeOrb(rect.left + rect.width * 0.5, rect.top + rect.height * 0.5, 40);
+    if (window.soundEngine) window.soundEngine.playPlasmaHum(0.8);
   });
 
   bindBtn('btn-voting-ratify', () => {
-    tekromancyFX.encircle('#voting-demo-card', 'plasma', { duration: 2500 });
-    tekromancyFX.lightning?.flash(0.7, 200);
+    tekromancyFX.encircle('#voting-demo-card', 'plasma', { duration: 2200 });
+    tekromancyFX.lightning?.flash(0.5, 150);
     if (window.soundEngine) window.soundEngine.playPlasmaHum(0.8);
   });
 
   // Station 05: Templates
   bindBtn('btn-templates-freeze', () => {
     const card = document.getElementById('templates-demo-card');
-    const rect = card ? card.getBoundingClientRect() : { left: window.innerWidth * 0.5, top: window.innerHeight * 0.5, width: 0, height: 0 };
-    tekromancyFX.ice?.freeze(rect.left, rect.top, rect.width, rect.height, 120);
-    if (window.soundEngine) window.soundEngine.playIceFreeze(0.9);
+    if (card) {
+      tekromancyFX.ice?.freeze(card, { duration: 2000, intensity: 1.2 });
+    }
+    if (window.soundEngine) window.soundEngine.playIceFreeze(0.8);
   });
 
   bindBtn('btn-templates-encircle', () => {
@@ -413,37 +444,37 @@ function initShowcase() {
 
   // Station 06: Enterprise LDAP
   bindBtn('btn-ldap-authenticate', () => {
-    tekromancyFX.storm({ lightning: 60, plasma: 70 }, 1800);
+    tekromancyFX.storm({ lightning: 50, plasma: 65 }, 1800);
     tekromancyFX.encircle('#ldap-demo-card', 'plasma', { duration: 2000 });
     if (window.soundEngine) window.soundEngine.playPlasmaHum(0.85);
   });
 
-  // Station 07: Tamper Defense
+  // Station 07: Tamper Defense (CLIMAX EVENT)
   bindBtn('btn-tamper-simulate-attack', () => {
-    tekromancyFX.lightning?.flash(1.0, 300);
+    tekromancyFX.lightning?.flash(1.0, 320);
     if (flashOverlay) {
       flashOverlay.classList.add('flash');
-      setTimeout(() => flashOverlay.classList.remove('flash'), 160);
+      setTimeout(() => flashOverlay.classList.remove('flash'), 180);
     }
     document.body.classList.add('screen-impact-shake');
-    setTimeout(() => document.body.classList.remove('screen-impact-shake'), 600);
+    setTimeout(() => document.body.classList.remove('screen-impact-shake'), 750);
 
     const card = document.getElementById('tamper-demo-card');
     const rect = card ? card.getBoundingClientRect() : { left: window.innerWidth * 0.5, top: window.innerHeight * 0.5, width: 0, height: 0 };
     tekromancyFX.lightning?.strike(window.innerWidth * 0.5, 0, rect.left + rect.width * 0.5, rect.top + rect.height * 0.5);
-    tekromancyFX.fire?.burst(rect.left + rect.width * 0.5, rect.top + rect.height * 0.5, 75);
+    tekromancyFX.fire?.burst(rect.left + rect.width * 0.5, rect.top + rect.height * 0.5, 80);
     if (window.soundEngine) window.soundEngine.playThunderCrack(1.0);
   });
 
-  // Station 08: Unified Multi-Element Demo
+  // Station 08: Unified Multi-Element Climax Storm
   bindBtn('btn-unified-storm', () => {
     tekromancyFX.storm({
-      lightning: 85,
-      fire: 70,
-      plasma: 75,
-      ice: 60,
-      water: 50
-    }, 3500);
+      lightning: 90,
+      fire: 80,
+      plasma: 85,
+      ice: 70,
+      water: 60
+    }, 3600);
     if (window.soundEngine) window.soundEngine.playThunderCrack(1.0);
   });
 
@@ -455,18 +486,18 @@ function initShowcase() {
     switch (e.key) {
       case 'l':
       case 'L':
-        tekromancyFX.lightning?.flash(0.8, 200);
+        tekromancyFX.lightning?.flash(0.7, 180);
         if (window.soundEngine) window.soundEngine.playThunderCrack(0.7);
         break;
       case 'f':
       case 'F':
-        tekromancyFX.fire?.burst(window.innerWidth * 0.5, window.innerHeight * 0.5, 60);
-        if (window.soundEngine) window.soundEngine.playFireCrackle(0.8);
+        tekromancyFX.fire?.burst(window.innerWidth * 0.5, window.innerHeight * 0.5, 55);
+        if (window.soundEngine) window.soundEngine.playFireCrackle(0.7);
         break;
       case 'p':
       case 'P':
-        tekromancyFX.plasma?.strikeOrb(window.innerWidth * 0.5, window.innerHeight * 0.5, 50);
-        if (window.soundEngine) window.soundEngine.playPlasmaHum(0.8);
+        tekromancyFX.plasma?.strikeOrb(window.innerWidth * 0.5, window.innerHeight * 0.5, 45);
+        if (window.soundEngine) window.soundEngine.playPlasmaHum(0.75);
         break;
       case 'm':
       case 'M':

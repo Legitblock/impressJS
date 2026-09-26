@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LegitBlock: Cryptographic Governance & Document Ratification Blockchain</title>
+  <meta name="description" content="3D interactive presentation powered by impress.js and @tekromancy/tekromancy visual FX engine for LegitBlock organizational blockchain.">
+  
+  <link rel="stylesheet" href="css/impress-common.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="impress-not-supported">
+
+  <!-- Lightning & Impact Flash Overlay -->
+  <div id="lightning-flash-overlay" aria-hidden="true"></div>
+
+  <!-- Fallback message for unsupported browsers -->
+  <div class="fallback-message">
+    <p>Your browser <b>doesn't support the 3D features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best 3D cyber visual experience, please use the latest version of Chrome, Firefox, Safari, or Edge.</p>
+  </div>
+
+  <!-- HEADS-UP DISPLAY (HUD) TOP BAR -->
+  <header id="hud-header">
+    <div class="hud-brand">
+      <div class="hud-status-dot"></div>
+      <span class="hud-brand-tag">LEGITBLOCK // 3D ARCHITECTURE</span>
+    </div>
+
+    <div class="hud-center-title">
+      STATION: <span id="hud-step-title">Genesis Gateway</span>
+    </div>
+
+    <div class="hud-controls">
+      <button id="btn-prev" class="hud-btn" title="Previous Station (Left Arrow / Backspace)">
+        <span class="btn-icon">◀</span> Prev
+      </button>
+      <button id="btn-next" class="hud-btn" title="Next Station (Right Arrow / Spacebar)">
+        Next <span class="btn-icon">▶</span>
+      </button>
+      <button id="btn-overview" class="hud-btn" title="3D Celestial Constellation (Key 'O')">
+        <span class="btn-icon">✦</span> 3D Overview
+      </button>
+
+      <div class="hud-divider"></div>
+
+      <select id="hud-jump-menu" title="Jump directly to Station" aria-label="Jump to station">
+        <option value="legitblock-portal">00. Genesis Gateway</option>
+      </select>
+
+      <div class="hud-divider"></div>
+
+      <button id="btn-autoplay" class="hud-btn" title="Toggle Automated Tour">
+        <span>Autoplay</span>
+      </button>
+      <button id="btn-mute" class="hud-btn" title="Toggle Synthesizer Sound (Key 'M')">
+        <span>Mute</span>
+      </button>
+      <button id="btn-fullscreen" class="hud-btn" title="Toggle Fullscreen">
+        <span>⛶</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- IMPRESS 3D CANVAS VIEWPORT -->
+  <div id="impress" data-transition-duration="1800">
+
+    <!-- 3D IN-DOM CELESTIAL GLOBE WIREFRAME -->
+    <div id="globe-wireframe-container">
+      <div class="globe-ring globe-ring-equator"></div>
+      <div class="globe-ring globe-ring-meridian-0"></div>
+      <div class="globe-ring globe-ring-meridian-45"></div>
+      <div class="globe-ring globe-ring-meridian-90"></div>
+      <div class="globe-ring globe-ring-meridian-135"></div>
+      <div class="globe-ring globe-ring-lat-north"></div>
+      <div class="globe-ring globe-ring-lat-south"></div>
+      <div class="globe-ring globe-ring-orbital"></div>
+      <div class="globe-core-beacon"></div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- STATION 00: GENESIS GATEWAY                                       -->
+    <!-- Positioned far back at (0, -14000, 28000) with scale 8            -->
+    <!-- ================================================================= -->
+    <div id="legitblock-portal" class="step"
+         data-x="0" data-y="-14000" data-z="28000"
+         data-rotate-x="-35" data-rotate-y="60" data-rotate-z="720"
+         data-scale="8"
+         data-title="Genesis Gateway"
+         data-lightning="45">
+
+      <div class="cyber-panel portal-hero-panel">
+        <div class="portal-badge">CRYPTOGRAPHIC GOVERNANCE BLOCKCHAIN // V1.0</div>
+        <h1 class="portal-hero-title">LEGITBLOCK</h1>
+        <p class="portal-tagline">
+          Immutable Founding Documents, Democratic Member Voting, and Delaware DGCL § 224 Compliant Corporate Records on an Auditable Ledger.
+        </p>
+
+        <div class="portal-features-row">
+          <div class="portal-feature-pill">⚡ SHA-256 Block Hashing</div>
+          <div class="portal-feature-pill">📜 Structural Unified Diffs</div>
+          <div class="portal-feature-pill">🗳️ Quorum & Voting Engine</div>
+          <div class="portal-feature-pill">🏢 32 Organization Templates</div>
+          <div class="portal-feature-pill">🔒 LDAP & JWT Authentication</div>
+        </div>
+
+        <div class="portal-action-group">
+          <button id="btn-start-presentation" class="cyber-cta-btn">
+            ENTER THE LEDGER CONSTELLATION <span class="cta-arrow">⚡</span>
+          </button>
+          <div class="portal-tip-subtext">Press <strong>Spacebar</strong> or click anywhere to advance</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- STATION 01: THE MANIFESTO                                         -->
+    <!-- Prime meridian (0, 0, 9000)                                       -->
+    <!-- ================================================================= -->
+    <div id="station-manifesto" class="step"
+         data-x="0" data-y="0" data-z="9000"
+         data-rotate-x="0" data-rotate-y="0" data-rotate-z="0"
+         data-scale="1"
+         data-title="The Manifesto"
+         data-lightning="75" data-plasma="40">
+
+      <div class="cyber-panel">
+        <div class="station-meta-badge">STATION 01 // ARCHITECTURAL FOUNDATION</div>
+        <h2 class="station-title">THE LEGITBLOCK MANIFESTO</h2>
+        <p class="station-lead">
+          Corporate governance and organizational records have been fragmented across insecure PDF drafts, ephemeral email chains, and untracked board votes. LegitBlock anchors corporate truth into an immutable cryptographic chain.
+        </p>
+
+        <div class="grid-3col">
+          <div class="cyber-card">
+            <div class="card-icon" style="color: var(--cyan);">📜</div>
+            <div class="card-title">Immutable Documents</div>
+            <p class="card-text">
+              Founding charters, bylaws, resolutions, and board minutes are permanently hashed into linked blocks, eliminating retroactive alterations.
+            </p>
+          </div>
+
+          <div class="cyber-card">
+            <div class="card-icon" style="color: var(--plasma);">🗳️</div>
+            <div class="card-title">Code-Enforced Quorum</div>
+            <p class="card-text">
+              Amendments cannot merge until quorum thresholds, voting deadlines, and passing majorities are satisfied cryptographically.
+            </p>
+          </div>
+
+          <div class="cyber-card">
+            <div class="card-icon" style="color: var(--fire);">⚖️</div>
+            <div class="card-title">Legal Compliance</div>
+            <p class="card-text">
+              Directly fulfills Delaware General Corporation Law (DGCL) § 224 requirements for blockchain-administered corporate ledgers.
+            </p>
+          </div>
+        </div>
+
+        <div class="card-action-bar" style="margin-top: 24px;">
+          <button id="btn-test-manifesto-fx" class="fx-trigger-btn">
+            ⚡ Surge Energy Storm
+          </button>
+          <button id="btn-manifesto-encircle" class="fx-trigger-btn btn-plasma">
+            ⚛️ Encircle Governance Pillars
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- STATION 02: IMMUTABLE LEDGER & BLOCKCHAIN ENGINE                  -->
+    <!-- (5619, -4225, 5619) - Lat +28, Lon 45                           -->
+    <!-- ================================================================= -->
+    <div id="station-immutable-ledger" class="step"
+         data-x="5619" data-y="-4225" data-z="5619"
+         data-rotate-x="-28" data-rotate-y="405" data-rotate-z="360"
+         data-scale="1"
+         data-title="Cryptographic Ledger"
+         data-lightning="80" data-plasma="60">
+
+      <div class="cyber-panel">
+        <div class="station-meta-badge">STATION 02 // CORE ENGINE</div>
+        <h2 class="station-title">CRYPTOGRAPHIC BLOCKCHAIN LEDGER</h2>
+        <p class="station-lead">
+          Every charter amendment, shareholder resolution, and organizational vote forms a cryptographically linked block with SHA-256 verification and proof-of-work tamper sealing.
+        </p>
+
+        <div class="grid-2col">
+          <div class="cyber-card" id="ledger-demo-card">
+            <div class="card-title" style="color: var(--cyan);">Block #42 Structure</div>
+            <div class="terminal-box" style="margin-top: 12px; font-size: 11px;">
+<pre><code>{
+  "index": 42,
+  "timestamp": "2026-09-25T19:30:00Z",
+  "previousHash": "0000a4b9c1d2e...",
+  "hash": "00003f9e8a71c...",
+  "nonce": 38419,
+  "data": {
+    "action": "RATIFY_BYLAWS_AMENDMENT",
+    "documentId": "bylaws-v2.0",
+    "diffHash": "8f31b...",
+    "votes": { "yes": 9, "no": 1, "passed": true }
+  }
+}</code></pre>
+            </div>
+            <div class="substep" style="margin-top: 14px; font-size: 12px; color: var(--cyan);">
+              ✦ Genesis Block seals organization identity with zero pre-mine.
+            </div>
+            <div class="substep" style="margin-top: 8px; font-size: 12px; color: var(--gold);">
+              ✦ Cryptographic linkage validates complete chain integrity in O(N).
+            </div>
+          </div>
+
+          <div class="cyber-panel-sub">
+            <h3 style="font-family: var(--font-display); font-size: 16px; margin-bottom: 12px; color: var(--text-main);">
+              Interactive Block Mine & Verification
+            </h3>
+            <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+              Trigger real-time SHA-256 mining strikes against the ledger card using high-voltage lightning energy.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <button id="btn-ledger-mine-block" class="fx-trigger-btn">
+                ⚡ Strike Lightning Mine
+              </button>
+              <button id="btn-ledger-encircle" class="fx-trigger-btn btn-plasma">
+                ⚛️ Encircle Ledger Node
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- STATION 03: DOCUMENT DIFF ENGINE                                  -->
+    <!-- (8345, 3371, 0) - Lat -22, Lon 90                                -->
+    <!-- ================================================================= -->
+    <div id="station-diff-engine" class="step"
+         data-x="8345" data-y="3371" data-z="0"
+         data-rotate-x="22" data-rotate-y="810" data-rotate-z="720"
+         data-scale="1"
+         data-title="Document Diff Engine"
+         data-fire="85" data-smoke="50">
+
+      <div class="cyber-panel">
+        <div class="station-meta-badge">STATION 03 // DIFF & AUDIT LOGS</div>
+        <h2 class="station-title">PRECISION DOCUMENT DIFF ENGINE</h2>
+        <p class="station-lead">
+          Corporate governance requires exact redline tracking. LegitBlock integrates structural diffs that highlight precise clause modifications before they reach member balloting.
+        </p>
+
+        <div class="grid-2col">
+          <div class="cyber-card" id="diff-demo-card">
+            <div class="card-title" style="color: var(--fire);">Articles of Incorporation Redline</div>
+            <div class="diff-viewer" style="margin-top: 12px;">
+              <div class="diff-line diff-context">@@ -14,5 +14,5 @@ Article IV: Authorized Capital</div>
+              <div class="diff-line diff-del">- Total authorized common shares: 10,000,000 ($0.0001 par value)</div>
+              <div class="diff-line diff-add">+ Total authorized common shares: 25,000,000 ($0.0001 par value)</div>
+              <div class="diff-line diff-context">  Stock split factor: 2.5-for-1 forward split</div>
+              <div class="diff-line diff-add">+ Preferred Series A: 5,000,000 designated shares</div>
+            </div>
+
+            <div class="substep" style="margin-top: 14px; font-size: 12px; color: var(--fire);">
+              ✦ Unified terminal diffs provide instant visual transparency.
+            </div>
+            <div class="substep" style="margin-top: 8px; font-size: 12px; color: var(--smoke);">
+              ✦ Hashed diff payloads are sealed directly into ratified blocks.
+            </div>
+          </div>
+
+          <div class="cyber-panel-sub">
+            <h3 style="font-family: var(--font-display); font-size: 16px; margin-bottom: 12px; color: var(--text-main);">
+              Convective Fire Redline Burn
+            </h3>
+            <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+              Simulate the combustion and replacement of outdated legal text with turbulent thermal fire particles.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <button id="btn-diff-burn-amendment" class="fx-trigger-btn btn-fire">
+                🔥 Ignite Amendment Redline
+              </button>
+              <button id="btn-diff-encircle" class="fx-trigger-btn btn-fire">
+                🔥 Thermal Containment Field
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- STATION 04: VOTING & DEMOCRATIC GOVERNANCE                       -->
+    <!-- (5397, -4769, -5397) - Lat 32, Lon 135                            -->
+    <!-- ================================================================= -->
+    <div id="station-voting-governance" class="step"
+         data-x="5397" data-y="-4769" data-z="-5397"
+         data-rotate-x="-32" data-rotate-y="1215" data-rotate-z="1080"
+         data-scale="1"
+         data-title="Voting & Quorum Engine"
+         data-plasma="90" data-lightning="40">
+
+      <div class="cyber-panel">
+        <div class="station-meta-badge">STATION 04 // DEMOCRATIC GOVERNANCE</div>
+        <h2 class="station-title">CODE-ENFORCED QUORUM & VOTING</h2>
+        <p class="station-lead">
+          LegitBlock enforces democratic, board, or consensus rules right into the state transition pipeline. Ballots are cryptographically collected, verified, and sealed.
+        </p>
+
+        <div class="grid-2col">
+          <div class="cyber-card" id="voting-demo-card">
+            <div class="card-title" style="color: var(--plasma);">Proposal #108: 2026 Board Resolution</div>
+            <div style="margin-top: 14px;">
+              <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px;">
+                <span>Quorum Status (75% Required)</span>
+                <span style="color: var(--cyan); font-weight: bold;">83.3% Achieved</span>
+              </div>
+              <div style="height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+                <div style="width: 83.3%; height: 100%; background: linear-gradient(90deg, var(--plasma), var(--cyan));"></div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; font-size: 12px; margin: 16px 0 6px;">
+                <span>Majority Vote (Yes / No)</span>
+                <span style="color: var(--plasma); font-weight: bold;">10 Yes / 2 No (83.3%)</span>
+              </div>
+              <div style="height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+                <div style="width: 83.3%; height: 100%; background: var(--plasma);"></div>
+              </div>
+            </div>
+
+            <div class="substep" style="margin-top: 18px; font-size: 12px; color: var(--plasma);">
+              ✦ Automatic ratification block trigger on quorum fulfillment.
+            </div>
+            <div class="substep" style="margin-top: 8px; font-size: 12px; color: var(--cyan);">
+              ✦ Full cryptographic voter audit trail with zero ballot tampering.
+            </div>
+          </div>
+
+          <div class="cyber-panel-sub">
+            <h3 style="font-family: var(--font-display); font-size: 16px; margin-bottom: 12px; color: var(--text-main);">
+              Plasma Balloting Simulation
+            </h3>
+            <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+              Ionized plasma arcs represent authenticated cryptographic ballot tokens transmitted across voting nodes.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <button id="btn-voting-cast-vote" class="fx-trigger-btn btn-plasma">
+                ⚛️ Cast Cryptographic Ballot
+              </button>
+              <button id="btn-voting-ratify" class="fx-trigger-btn">
+                ⚡ Ratify Block & Seal Quorum
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- STATION 05: 32 ORGANIZATIONAL TEMPLATES                          -->
+    <!-- (0, 2781, -8560) - Lat -18, Lon 180                               -->
+    <!-- ================================================================= -->
+    <div id="station-templates" class="step"
+         data-x="0" data-y="2781" data-z="-8560"
+         data-rotate-x="18" data-rotate-y="1620" data-rotate-z="1440"
+         data-scale="1"
+         data-title="32 Organization Templates"
+         data-ice="80" data-water="60">
+
+      <div class="cyber-panel">
+        <div class="station-meta-badge">STATION 05 // MULTI-SECTOR GOVERNANCE</div>
+        <h2 class="station-title">32 BUILT-IN ORGANIZATION TEMPLATES</h2>
+        <p class="station-lead">
+          LegitBlock includes production-grade governance templates with pre-configured voting rules, quorum thresholds, and founding legal documents across 3 major sectors.
+        </p>
+
+        <div class="grid-3col" id="templates-demo-card">
+          <div class="cyber-card">
+            <div class="card-icon" style="color: var(--cyan);">🏢</div>
+            <div class="card-title">For-Profit (12)</div>
+            <p class="card-text">
+              Delaware C-Corp, Member-Managed LLC, Manager-Managed LLC, S-Corp, B-Corp, Series LLC, Close Corp, Professional Corp.
+            </p>
+          </div>
+
+          <div class="cyber-card">
+            <div class="card-icon" style="color: var(--gold);">🏛️</div>
+            <div class="card-title">Non-Profit (12)</div>
+            <p class="card-text">
+              501(c)(3) Public Charity, 501(c)(4) Social Welfare, 501(c)(6) Trade Association, 501(c)(7) Social Club, Private Foundation.
+            </p>
+          </div>
+
+          <div class="cyber-card">
+            <div class="card-icon" style="color: var(--ice);">🤝</div>
+            <div class="card-title">Cooperatives (8)</div>
+            <p class="card-text">
+              Worker Cooperative, Consumer Cooperative, Producer Cooperative, Housing Co-op, Credit Union, Platform DAO Co-op.
+            </p>
+          </div>
+        </div>
+
+        <div class="card-action-bar" style="margin-top: 24px;">
+          <button id="btn-templates-freeze" class="fx-trigger-btn btn-ice">
+            ❄️ Crystallize Founding Documents
+          </button>
+          <button id="btn-templates-encircle" class="fx-trigger-btn btn-ice">
+            ❄️ Dendritic Frost Encircle
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- STATION 06: ENTERPRISE LDAP & JWT AUTH                           -->
+    <!-- (-5619, -4225, -5619) - Lat 28, Lon 225                           -->
+    <!-- ================================================================= -->
+    <div id="station-enterprise-ldap" class="step"
+         data-x="-5619" data-y="-4225" data-z="-5619"
+         data-rotate-x="-28" data-rotate-y="2025" data-rotate-z="1800"
+         data-scale="1"
+         data-title="Enterprise LDAP & JWT"
+         data-lightning="50" data-plasma="75">
+
+      <div class="cyber-panel">
+        <div class="station-meta-badge">STATION 06 // IDENTITY & ACCESS</div>
+        <h2 class="station-title">ENTERPRISE LDAP & JWT AUTH</h2>
+        <p class="station-lead">
+          Seamlessly integrate with corporate Active Directory / OpenLDAP directories. LegitBlock binds identity directly to governance privileges and role-based ballot permissions.
+        </p>
+
+        <div class="grid-2col">
+          <div class="cyber-card" id="ldap-demo-card">
+            <div class="card-title" style="color: var(--cyan);">Role-Based Access Hierarchy</div>
+            <ul style="list-style: none; margin-top: 14px; font-size: 13px; line-height: 2;">
+              <li>👑 <strong style="color: var(--gold);">Owner / Founder:</strong> Full ratification & genesis sovereignty</li>
+              <li>🛡️ <strong style="color: var(--cyan);">Director / Officer:</strong> Proposal sponsor & board voting rights</li>
+              <li>👥 <strong style="color: var(--plasma);">Shareholder / Member:</strong> Democratic balloting on amendments</li>
+              <li>👁️ <strong style="color: var(--text-muted);">Auditor / Observer:</strong> Read-only cryptographic inspection</li>
+            </ul>
+
+            <div class="substep" style="margin-top: 14px; font-size: 12px; color: var(--cyan);">
+              ✦ Secure token-based HMAC / RSA JWT signatures for all transactions.
+            </div>
+          </div>
+
+          <div class="cyber-panel-sub">
+            <h3 style="font-family: var(--font-display); font-size: 16px; margin-bottom: 12px; color: var(--text-main);">
+              LDAP Verification Simulator
+            </h3>
+            <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+              Simulate enterprise authentication handshakes with encrypted plasma flows and verification flashes.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <button id="btn-ldap-authenticate" class="fx-trigger-btn btn-plasma">
+                ⚛️ Authenticate Enterprise Identity
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- STATION 07: CRYPTOGRAPHIC TAMPER DEFENSE                         -->
+    <!-- (-8222, 3660, 0) - Lat -24, Lon 270                              -->
+    <!-- ================================================================= -->
+    <div id="station-tamper-defense" class="step"
+         data-x="-8222" data-y="3660" data-z="0"
+         data-rotate-x="24" data-rotate-y="2430" data-rotate-z="2160"
+         data-scale="1"
+         data-title="Tamper Detection"
+         data-lightning="95" data-fire="70">
+
+      <div class="cyber-panel">
+        <div class="station-meta-badge">STATION 07 // AUDIT INTEGRITY</div>
+        <h2 class="station-title">CRYPTOGRAPHIC TAMPER DETECTION</h2>
+        <p class="station-lead">
+          Even a single bit changed in historical bylaws or past votes breaks the hash cascade. LegitBlock locates the exact block index of unauthorized tampering in milliseconds.
+        </p>
+
+        <div class="grid-2col">
+          <div class="cyber-card" id="tamper-demo-card">
+            <div class="card-title" style="color: #ef4444;">Tamper Defense Telemetry</div>
+            <div class="terminal-box" style="margin-top: 12px; border-color: rgba(239, 68, 68, 0.4);">
+<pre style="color: #f87171;"><code>[SYSTEM WARNING] Chain Verification Audit:
+Scanning 42 ratified blocks...
+[ERROR] Block #14 hash mismatch!
+Expected: 00003f9e8a71...
+Calculated: e891b2c401aa...
+Tampered Field: data.document.bylaws
+Action: Automatic quarantine of invalid branch.</code></pre>
+            </div>
+            <div class="substep" style="margin-top: 14px; font-size: 12px; color: #ef4444;">
+              ✦ Zero tolerance for retroactive amendment fraud.
+            </div>
+          </div>
+
+          <div class="cyber-panel-sub">
+            <h3 style="font-family: var(--font-display); font-size: 16px; margin-bottom: 12px; color: var(--text-main);">
+              Simulate Hostile Attack
+            </h3>
+            <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+              Trigger an emergency defense alarm with high-voltage lightning strikes and viewport vibration.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <button id="btn-tamper-simulate-attack" class="fx-trigger-btn btn-fire" style="border-color: #ef4444; color: #ef4444;">
+                ⚡ Trigger Tamper Attack Alarm
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- STATION 08: FULL STACK UNIFIED DEMO                              -->
+    <!-- (-5511, -4500, 5511) - Lat 30, Lon 315                            -->
+    <!-- ================================================================= -->
+    <div id="station-unified-demo" class="step"
+         data-x="-5511" data-y="-4500" data-z="5511"
+         data-rotate-x="-30" data-rotate-y="2835" data-rotate-z="2520"
+         data-scale="1"
+         data-title="Full Stack Architecture"
+         data-lightning="75" data-fire="60" data-plasma="70" data-ice="50">
+
+      <div class="cyber-panel">
+        <div class="station-meta-badge">STATION 08 // COMPLETE SYSTEM</div>
+        <h2 class="station-title">UNIFIED ARCHITECTURAL STACK</h2>
+        <p class="station-lead">
+          LegitBlock ships as a headless TypeScript core library, an interactive terminal CLI powered by Ink/React, and a responsive Next.js 14 web console.
+        </p>
+
+        <div class="grid-3col">
+          <div class="cyber-card">
+            <div class="card-icon" style="color: var(--cyan);">📦</div>
+            <div class="card-title">@legitblock/utils</div>
+            <p class="card-text">
+              Zero-dependency headless core engine for blockchain state, diff calculation, voting rules, and LDAP auth.
+            </p>
+          </div>
+
+          <div class="cyber-card">
+            <div class="card-icon" style="color: var(--plasma);">🖥️</div>
+            <div class="card-title">CLI Terminal (Ink)</div>
+            <p class="card-text">
+              Rich interactive terminal experience for sysadmins to mine blocks, review redlines, and tally board votes.
+            </p>
+          </div>
+
+          <div class="cyber-card">
+            <div class="card-icon" style="color: var(--gold);">🌐</div>
+            <div class="card-title">Next.js Web App</div>
+            <p class="card-text">
+              Enterprise dashboard featuring live block visualizers, ballot portals, and legal export packages.
+            </p>
+          </div>
+        </div>
+
+        <div class="card-action-bar" style="margin-top: 24px;">
+          <button id="btn-unified-storm" class="fx-trigger-btn">
+            ⚡ Unleash Full Multi-Element Storm
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- STATION 09: QUICKSTART & INTEGRATION GUIDE                       -->
+    <!-- (0, 6688, 6022) - Lat -48, Lon 360                                -->
+    <!-- ================================================================= -->
+    <div id="station-quickstart" class="step"
+         data-x="0" data-y="6688" data-z="6022"
+         data-rotate-x="48" data-rotate-y="3240" data-rotate-z="2880"
+         data-scale="1"
+         data-title="Quickstart Guide"
+         data-water="70" data-lightning="50">
+
+      <div class="cyber-panel">
+        <div class="station-meta-badge">STATION 09 // DEVELOPER GUIDE</div>
+        <h2 class="station-title">GET STARTED WITH LEGITBLOCK</h2>
+        <p class="station-lead">
+          Bootstrap a cryptographically governed organization in less than 60 seconds with npm or pnpm.
+        </p>
+
+        <pre class="code-box"><code><span class="code-comment">// 1. Install LegitBlock core library</span>
+<span class="code-keyword">pnpm</span> add @legitblock/legitblock-utils
+
+<span class="code-comment">// 2. Initialize Delaware C-Corporation Blockchain</span>
+<span class="code-keyword">import</span> { Blockchain, Templates } <span class="code-keyword">from</span> <span class="code-str">'@legitblock/legitblock-utils'</span>;
+
+<span class="code-keyword">const</span> cCorp = Templates.get(<span class="code-str">'for-profit-c-corp'</span>);
+<span class="code-keyword">const</span> chain = <span class="code-keyword">new</span> <span class="code-func">Blockchain</span>({ organization: cCorp });
+chain.<span class="code-func">initializeGenesisBlock</span>();
+
+<span class="code-comment">// 3. Propose Bylaw Amendment & Execute Board Vote</span>
+<span class="code-keyword">const</span> voteResult = chain.<span class="code-func">castVote</span>({ proposalId: <span class="code-str">'prop-01'</span>, voter: <span class="code-str">'alice@corp.com'</span>, decision: <span class="code-str">'YES'</span> });
+<span class="code-keyword">if</span> (voteResult.passed) chain.<span class="code-func">ratifyBlock</span>(voteResult.payload);</code></pre>
+
+        <div style="margin-top: 20px; display: flex; gap: 16px; justify-content: center;">
+          <a href="https://github.com/Legitblock/legitblock" target="_blank" rel="noopener" class="cyber-cta-btn" style="text-decoration: none;">
+            VIEW ON GITHUB ↗
+          </a>
+          <button id="btn-overview-jump" class="hud-btn" style="padding: 10px 20px;" onclick="impress().goto('overview')">
+            ✦ VIEW 3D CONSTELLATION
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- STATION 10: 3D CONSTELLATION OVERVIEW                            -->
+    <!-- Overview at (0, 0, 24000) with scale 18                           -->
+    <!-- ================================================================= -->
+    <div id="overview" class="step"
+         data-x="0" data-y="0" data-z="24000"
+         data-rotate-x="0" data-rotate-y="3600" data-rotate-z="3600"
+         data-scale="18"
+         data-title="3D Constellation"
+         data-lightning="65" data-plasma="55" data-fire="35">
+
+      <div class="overview-zone-container">
+        <div class="overview-header-zone">
+          <div class="station-meta-badge">STATION 10 // GLOBAL CONSTELLATION</div>
+          <h2 class="portal-hero-title" style="font-size: 38px;">LEGITBLOCK ARCHITECTURE</h2>
+          <div class="overview-telemetry-strip">
+            <span>TOTAL NODES: <strong>09 STATIONS</strong></span>
+            <span>RADIUS: <strong>9,000 PX</strong></span>
+            <span>ENGINE: <strong>@tekromancy/tekromancy</strong></span>
+            <span>STANDARD: <strong>DGCL § 224</strong></span>
+          </div>
+        </div>
+
+        <div class="constellation-stations-grid">
+          <div class="orbital-node-card" data-goto="station-manifesto" style="border-top: 3px solid var(--cyan);">
+            <div class="orbital-node-top">
+              <span class="orbital-node-badge" style="color: var(--cyan);">01</span>
+              <span class="orbital-node-glyph">📜</span>
+            </div>
+            <div class="orbital-node-title">MANIFESTO</div>
+            <div class="orbital-node-coords">Lat 0° / Lon 0°</div>
+          </div>
+
+          <div class="orbital-node-card" data-goto="station-immutable-ledger" style="border-top: 3px solid var(--water);">
+            <div class="orbital-node-top">
+              <span class="orbital-node-badge" style="color: var(--water);">02</span>
+              <span class="orbital-node-glyph">⚡</span>
+            </div>
+            <div class="orbital-node-title">LEDGER ENGINE</div>
+            <div class="orbital-node-coords">Lat +28° / Lon 45°</div>
+          </div>
+
+          <div class="orbital-node-card" data-goto="station-diff-engine" style="border-top: 3px solid var(--fire);">
+            <div class="orbital-node-top">
+              <span class="orbital-node-badge" style="color: var(--fire);">03</span>
+              <span class="orbital-node-glyph">🔥</span>
+            </div>
+            <div class="orbital-node-title">DIFF ENGINE</div>
+            <div class="orbital-node-coords">Lat -22° / Lon 90°</div>
+          </div>
+
+          <div class="orbital-node-card" data-goto="station-voting-governance" style="border-top: 3px solid var(--plasma);">
+            <div class="orbital-node-top">
+              <span class="orbital-node-badge" style="color: var(--plasma);">04</span>
+              <span class="orbital-node-glyph">🗳️</span>
+            </div>
+            <div class="orbital-node-title">QUORUM & VOTES</div>
+            <div class="orbital-node-coords">Lat +32° / Lon 135°</div>
+          </div>
+
+          <div class="orbital-node-card" data-goto="station-templates" style="border-top: 3px solid var(--gold);">
+            <div class="orbital-node-top">
+              <span class="orbital-node-badge" style="color: var(--gold);">05</span>
+              <span class="orbital-node-glyph">🏢</span>
+            </div>
+            <div class="orbital-node-title">32 TEMPLATES</div>
+            <div class="orbital-node-coords">Lat -18° / Lon 180°</div>
+          </div>
+
+          <div class="orbital-node-card" data-goto="station-enterprise-ldap" style="border-top: 3px solid #22c55e;">
+            <div class="orbital-node-top">
+              <span class="orbital-node-badge" style="color: #22c55e;">06</span>
+              <span class="orbital-node-glyph">🔒</span>
+            </div>
+            <div class="orbital-node-title">LDAP AUTH</div>
+            <div class="orbital-node-coords">Lat +28° / Lon 225°</div>
+          </div>
+
+          <div class="orbital-node-card" data-goto="station-tamper-defense" style="border-top: 3px solid #ef4444;">
+            <div class="orbital-node-top">
+              <span class="orbital-node-badge" style="color: #ef4444;">07</span>
+              <span class="orbital-node-glyph">🛡️</span>
+            </div>
+            <div class="orbital-node-title">TAMPER DEFENSE</div>
+            <div class="orbital-node-coords">Lat -24° / Lon 270°</div>
+          </div>
+
+          <div class="orbital-node-card" data-goto="station-unified-demo" style="border-top: 3px solid #a855f7;">
+            <div class="orbital-node-top">
+              <span class="orbital-node-badge" style="color: #a855f7;">08</span>
+              <span class="orbital-node-glyph">📦</span>
+            </div>
+            <div class="orbital-node-title">FULL STACK</div>
+            <div class="orbital-node-coords">Lat +30° / Lon 315°</div>
+          </div>
+
+          <div class="orbital-node-card" data-goto="station-quickstart" style="border-top: 3px solid var(--cyan);">
+            <div class="orbital-node-top">
+              <span class="orbital-node-badge" style="color: var(--cyan);">09</span>
+              <span class="orbital-node-glyph">🚀</span>
+            </div>
+            <div class="orbital-node-title">QUICKSTART</div>
+            <div class="orbital-node-coords">Lat -48° / Lon 360°</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- HUD FOOTER PROGRESS BAR -->
+  <footer id="hud-footer">
+    <div id="hud-progress-bar">
+      <div id="hud-progress-fill"></div>
+    </div>
+
+    <div>
+      STATION <span id="hud-step-current" class="hud-counter">00</span> / <span id="hud-step-total" class="hud-counter">10</span>
+    </div>
+
+    <div class="hud-hints">
+      <span>NAVIGATE: <kbd>Space</kbd> / <kbd>→</kbd> / <kbd>←</kbd></span>
+      <span>CONSTELLATION: <kbd>O</kbd></span>
+      <span>LIGHTNING: <kbd>L</kbd></span>
+      <span>FIRE: <kbd>F</kbd></span>
+      <span>PLASMA: <kbd>P</kbd></span>
+      <span>SOUND: <kbd>M</kbd></span>
+    </div>
+
+    <div>
+      POWERED BY <strong style="color: var(--cyan);">@tekromancy/tekromancy</strong>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./js/impress.js"></script>
+  <script src="./js/audio-fx.js"></script>
+  <script src="./js/cyber-canvas.js"></script>
+  <script type="module" src="./js/presentation.js"></script>
+</body>
+</html>

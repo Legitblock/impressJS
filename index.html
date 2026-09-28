@@ -25,6 +25,7 @@
     <div class="hud-brand">
       <div class="hud-status-dot"></div>
       <span class="hud-brand-tag">LEGITBLOCK // 3D ARCHITECTURE</span>
+      <canvas id="hud-audio-waveform" width="80" height="20" title="Audio Spectrum Analyser" style="margin-left: 10px; border-radius: 3px; background: rgba(0,0,0,0.5); border: 1px solid rgba(0, 240, 255, 0.3); vertical-align: middle;"></canvas>
     </div>
 
     <div class="hud-center-title">
@@ -50,11 +51,20 @@
 
       <div class="hud-divider"></div>
 
+      <button id="btn-eco-mode" class="hud-btn" title="Toggle Low-Power / Battery Saver Mode (Key 'B')">
+        <span>ECO</span>
+      </button>
       <button id="btn-autoplay" class="hud-btn" title="Toggle Automated Tour">
         <span>Autoplay</span>
       </button>
       <button id="btn-mute" class="hud-btn" title="Toggle Synthesizer Sound (Key 'M')">
         <span>Mute</span>
+      </button>
+      <button id="btn-narration" class="hud-btn" title="Toggle AI Cyber Voice Narration (Key 'V')">
+        <span>🎙️ Voice</span>
+      </button>
+      <button id="btn-spatial-gyro" class="hud-btn" title="Toggle Spatial WebXR / Gyroscopic Device Mode (Key 'G')">
+        <span>🧭 Gyro 3D</span>
       </button>
       <button id="btn-fullscreen" class="hud-btn" title="Toggle Fullscreen">
         <span>⛶</span>
@@ -109,6 +119,16 @@
             ENTER THE LEDGER CONSTELLATION <span class="cta-arrow">⚡</span>
           </button>
           <div class="portal-tip-subtext">Press <strong>Spacebar</strong> or click anywhere to advance</div>
+        </div>
+
+        <div class="notes">
+          <p><strong>Presenter Notes - Station 00: Genesis Gateway:</strong></p>
+          <ul>
+            <li>Welcome the audience to LegitBlock: the cryptographic governance and document ratification blockchain.</li>
+            <li>Frame the core problem: Corporate records, founding charters, and board minutes are routinely mismanaged across unversioned PDFs, ephemeral DocuSign envelopes, and untracked email chains.</li>
+            <li>LegitBlock solves this by anchoring democratic voting, bylaws amendments, and corporate records into an auditable SHA-256 blockchain ledger.</li>
+            <li>Audience cue: Press <kbd>Spacebar</kbd> or <kbd>→</kbd> to initiate our journey through the 3D spherical constellation.</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -165,6 +185,15 @@
             ⚛️ Encircle Governance Pillars
           </button>
         </div>
+
+        <div class="notes">
+          <p><strong>Presenter Notes - Station 01: The LegitBlock Manifesto:</strong></p>
+          <ul>
+            <li>Highlight the three foundational pillars of the architecture: Immutability, Code-Enforced Quorum, and Legal Compliance.</li>
+            <li>Reference Delaware General Corporation Law (DGCL) § 224: Delaware amended its corporate statutes to allow corporations to administer their stock ledgers and corporate records using distributed electronic networks and blockchain databases.</li>
+            <li>Emphasize that LegitBlock is not a speculative cryptocurrency or financial token; it is enterprise legaltech designed for verifiable corporate governance.</li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -213,21 +242,43 @@
           </div>
 
           <div class="cyber-panel-sub">
-            <h3 style="font-family: var(--font-display); font-size: 16px; margin-bottom: 12px; color: var(--text-main);">
+            <h3 style="font-family: var(--font-display); font-size: 16px; margin-bottom: 8px; color: var(--text-main);">
               Interactive Block Mine & Verification
             </h3>
-            <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
-              Trigger real-time SHA-256 mining strikes against the ledger card using high-voltage lightning energy.
+            <p style="font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px;">
+              Specify proposal data and compute a real-time SHA-256 block hash meeting difficulty targets with dynamic nonce calculation:
             </p>
-            <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div>
+              <label for="mining-payload-input" style="font-size: 11px; color: var(--cyan); display: block; margin-bottom: 4px; font-family: var(--font-mono);">PAYLOAD ACTION:</label>
+              <input type="text" id="mining-payload-input" class="sandbox-mining-input" value="RATIFY_SERIES_A_AMENDMENT" placeholder="Enter resolution data...">
+            </div>
+            <div class="mining-status-bar" id="mining-status-strip">
+              <span>STATUS: <strong id="mining-status-text" style="color: var(--cyan);">READY</strong></span>
+              <span>NONCE: <strong id="mining-nonce-display">38,419</strong></span>
+              <span>HASH: <strong id="mining-hash-display" style="color: var(--gold);">00003f9e...</strong></span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
               <button id="btn-ledger-mine-block" class="fx-trigger-btn">
-                ⚡ Strike Lightning Mine
+                ⚡ Mine Live SHA-256 Block
+              </button>
+              <button id="btn-export-certificate" class="fx-trigger-btn" style="border-color: var(--gold); color: var(--gold);">
+                📜 Export DGCL § 224 Certificate
               </button>
               <button id="btn-ledger-encircle" class="fx-trigger-btn btn-plasma">
                 ⚛️ Encircle Ledger Node
               </button>
             </div>
           </div>
+        </div>
+
+        <div class="notes">
+          <p><strong>Presenter Notes - Station 02: Cryptographic Ledger:</strong></p>
+          <ul>
+            <li>Explain the structure of a LegitBlock block: header, timestamp, previous hash, merkle/diff payload, and cryptographic nonce.</li>
+            <li>Highlight that unlike speculative public tokens, LegitBlock's proof-of-work is calibrated for deterministic organizational finality.</li>
+            <li>Demonstrate the live mining sandbox: altering the payload forces real-time SHA-256 hashing to recalculate an authentic block header.</li>
+            <li>Legal point: Delaware DGCL § 224 explicitly validates cryptographic hash pointers for corporate stock ledgers and official minute books.</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -270,13 +321,23 @@
           </div>
 
           <div class="cyber-panel-sub">
-            <h3 style="font-family: var(--font-display); font-size: 16px; margin-bottom: 12px; color: var(--text-main);">
-              Convective Fire Redline Burn
+            <h3 style="font-family: var(--font-display); font-size: 16px; margin-bottom: 8px; color: var(--text-main);">
+              Select Document Clause Redline
             </h3>
-            <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
-              Simulate the combustion and replacement of outdated legal text with turbulent thermal fire particles.
+            <p style="font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 10px;">
+              Choose between active amendment drafts to view syntax-highlighted unified diffs:
             </p>
-            <div style="display: flex; flex-direction: column; gap: 12px;">
+            <select id="diff-clause-select" class="clause-select-dropdown" aria-label="Select clause to preview redline">
+              <option value="capital">Article IV: Authorized Capital (Shares & Preferred)</option>
+              <option value="quorum">Article VII: Board of Directors Quorum (67% to 75%)</option>
+              <option value="voting">Article XII: Cryptographic Voting & Balloting Protocol</option>
+              <option value="custom">✦ Custom Real-Time Clause Redline Input...</option>
+            </select>
+            <div id="diff-custom-container" style="display: none; margin-top: 8px;">
+              <label for="diff-custom-input" style="font-size: 11px; color: var(--fire); display: block; margin-bottom: 4px; font-family: var(--font-mono);">CUSTOM CLAUSE TEXT (LIVE DIFF):</label>
+              <textarea id="diff-custom-input" class="sandbox-mining-input" rows="2" style="resize: vertical; font-size: 11px; margin-bottom: 8px;" placeholder="Type custom amendment text to see real-time diff and SHA-256 hash..."></textarea>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 14px;">
               <button id="btn-diff-burn-amendment" class="fx-trigger-btn btn-fire">
                 🔥 Ignite Amendment Redline
               </button>
@@ -285,6 +346,16 @@
               </button>
             </div>
           </div>
+        </div>
+
+        <div class="notes">
+          <p><strong>Presenter Notes - Station 03: Precision Diff Engine:</strong></p>
+          <ul>
+            <li>Legal ambiguity arises when parties review conflicting Word/PDF revisions. LegitBlock uses standard git-style unified diffs.</li>
+            <li>Switch clauses using the dropdown to demonstrate how redlines capture exact additions (+) and deletions (-).</li>
+            <li>The SHA-256 hash of the exact diff payload is what gets committed into the block data, providing undeniable non-repudiation.</li>
+            <li>Mention compatibility with markdown, plaintext bylaws, and standardized JSON organizational charters.</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -313,45 +384,96 @@
             <div style="margin-top: 14px;">
               <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px;">
                 <span>Quorum Status (75% Required)</span>
-                <span style="color: var(--cyan); font-weight: bold;">83.3% Achieved</span>
+                <span id="voting-quorum-pct" style="color: var(--cyan); font-weight: bold;">80.0% Achieved</span>
               </div>
               <div style="height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
-                <div style="width: 83.3%; height: 100%; background: linear-gradient(90deg, var(--plasma), var(--cyan));"></div>
+                <div id="voting-quorum-bar" style="width: 80%; height: 100%; background: linear-gradient(90deg, var(--plasma), var(--cyan)); transition: width 0.3s ease;"></div>
               </div>
 
-              <div style="display: flex; justify-content: space-between; font-size: 12px; margin: 16px 0 6px;">
-                <span>Majority Vote (Yes / No)</span>
-                <span style="color: var(--plasma); font-weight: bold;">10 Yes / 2 No (83.3%)</span>
+              <div style="display: flex; justify-content: space-between; font-size: 12px; margin: 14px 0 6px;">
+                <span>Majority Approval (Yes / Total Cast)</span>
+                <span id="voting-majority-pct" style="color: var(--plasma); font-weight: bold;">88.9% (80% YES / 10% NO)</span>
               </div>
               <div style="height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
-                <div style="width: 83.3%; height: 100%; background: var(--plasma);"></div>
+                <div id="voting-majority-bar" style="width: 88.9%; height: 100%; background: var(--plasma); transition: width 0.3s ease;"></div>
               </div>
             </div>
 
-            <div class="substep" style="margin-top: 18px; font-size: 12px; color: var(--plasma);">
-              ✦ Automatic ratification block trigger on quorum fulfillment.
-            </div>
-            <div class="substep" style="margin-top: 8px; font-size: 12px; color: var(--cyan);">
-              ✦ Full cryptographic voter audit trail with zero ballot tampering.
+            <!-- Interactive Voter Badges -->
+            <div class="voter-grid" id="voter-nodes-grid">
+              <div class="voter-card" data-voter="alice" data-weight="35" data-vote="yes" title="Click to toggle vote">
+                <div>
+                  <div class="voter-name">Alice (Founder)</div>
+                  <div class="voter-role">35% Weight</div>
+                </div>
+                <span class="voter-badge vote-yes">YES</span>
+              </div>
+              <div class="voter-card" data-voter="bob" data-weight="25" data-vote="yes" title="Click to toggle vote">
+                <div>
+                  <div class="voter-name">Bob (Lead VC)</div>
+                  <div class="voter-role">25% Weight</div>
+                </div>
+                <span class="voter-badge vote-yes">YES</span>
+              </div>
+              <div class="voter-card" data-voter="carol" data-weight="20" data-vote="yes" title="Click to toggle vote">
+                <div>
+                  <div class="voter-name">Carol (Director)</div>
+                  <div class="voter-role">20% Weight</div>
+                </div>
+                <span class="voter-badge vote-yes">YES</span>
+              </div>
+              <div class="voter-card" data-voter="dave" data-weight="10" data-vote="no" title="Click to toggle vote">
+                <div>
+                  <div class="voter-name">Dave (Advisor)</div>
+                  <div class="voter-role">10% Weight</div>
+                </div>
+                <span class="voter-badge vote-no">NO</span>
+              </div>
+              <div class="voter-card" data-voter="eve" data-weight="10" data-vote="abstain" title="Click to toggle vote" style="grid-column: span 2;">
+                <div>
+                  <div class="voter-name">Eve (Community Delegate)</div>
+                  <div class="voter-role">10% Weight</div>
+                </div>
+                <span class="voter-badge vote-abstain">ABSTAIN</span>
+              </div>
             </div>
           </div>
 
           <div class="cyber-panel-sub">
-            <h3 style="font-family: var(--font-display); font-size: 16px; margin-bottom: 12px; color: var(--text-main);">
-              Plasma Balloting Simulation
+            <h3 style="font-family: var(--font-display); font-size: 16px; margin-bottom: 8px; color: var(--text-main);">
+              Interactive Voter Balloting
             </h3>
-            <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
-              Ionized plasma arcs represent authenticated cryptographic ballot tokens transmitted across voting nodes.
+            <p style="font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px;">
+              Click any stakeholder card to toggle their ballot between <strong>YES</strong>, <strong>NO</strong>, and <strong>ABSTAIN</strong>. Observe automated quorum recalculation:
             </p>
-            <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="display: flex; flex-direction: column; gap: 10px;">
               <button id="btn-voting-cast-vote" class="fx-trigger-btn btn-plasma">
-                ⚛️ Cast Cryptographic Ballot
+                ⚛️ Cycle Selected Ballot
               </button>
               <button id="btn-voting-ratify" class="fx-trigger-btn">
                 ⚡ Ratify Block & Seal Quorum
               </button>
+              <button id="btn-audience-sync" class="fx-trigger-btn btn-cyan" style="font-size: 11px;">
+                🌐 Multiplayer Audience Mode: Sync Across Open Windows
+              </button>
+            </div>
+            <div id="audience-sync-badge" style="margin-top: 8px; font-family: var(--font-mono); font-size: 10px; color: var(--cyan); display: none;">
+              📡 BROADCAST CHANNEL ACTIVE: LIVE MULTI-WINDOW VOTING SYNCHRONIZED
+            </div>
+            <div id="voting-ratify-status" style="margin-top: 8px; font-family: var(--font-mono); font-size: 11px; color: #4ade80;">
+              ✔ QUORUM SATISFIED: READY FOR RATIFICATION BLOCK
             </div>
           </div>
+        </div>
+
+        <div class="notes">
+          <p><strong>Presenter Notes - Station 04: Democratic Governance & Quorum:</strong></p>
+          <ul>
+            <li>Traditional board voting is plagued by disputed meeting quorums and contested proxy votes.</li>
+            <li>In LegitBlock, quorum rules are hardcoded into smart state constraints: a proposed amendment cannot be mined into a ratification block unless quorum and majority thresholds are met.</li>
+            <li>Interactive demo: Click on Alice (35%) or Bob (25%) to change their vote to NO or ABSTAIN, showing that when quorum drops below 75%, ratification is automatically blocked.</li>
+            <li>Highlight the voter audit trail: each ballot includes a timestamp and signature.</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -408,6 +530,17 @@
             ❄️ Dendritic Frost Encircle
           </button>
         </div>
+
+        <div class="notes">
+          <p><strong>Presenter Notes - Station 05: 32 Organization Templates:</strong></p>
+          <ul>
+            <li>LegitBlock doesn't start from an empty sheet; it ships with 32 legally compliant organizational architectures.</li>
+            <li>For-Profit: Standard Delaware C-Corp (with stock split & option pools), LLC (member vs manager managed), Series LLC, B-Corps.</li>
+            <li>Non-Profit: 501(c)(3) charities with donor non-distribution constraints, 501(c)(4) social welfare, 501(c)(6) trade chambers.</li>
+            <li>Cooperatives: 1-member-1-vote democratic systems, worker co-ops, housing cooperatives, and digital platform DAOs.</li>
+            <li>Each template includes pre-seeded charter articles, quorum rules, and officer election protocols.</li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -458,6 +591,16 @@
             </div>
           </div>
         </div>
+
+        <div class="notes">
+          <p><strong>Presenter Notes - Station 06: Enterprise LDAP & JWT:</strong></p>
+          <ul>
+            <li>Companies already manage employee identities in Microsoft Active Directory, Okta, or OpenLDAP.</li>
+            <li>LegitBlock binds existing enterprise directory groups to blockchain permissions—no separate wallet setup required for non-technical board members.</li>
+            <li>Demonstrate the role-based hierarchy: Owners/Founders (genesis rights), Directors (proposal sponsoring), Members (balloting), Auditors (read-only audit).</li>
+            <li>JWT tokens sign ballot payloads, verified on-chain against the organization's public keystore.</li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -482,14 +625,23 @@
         <div class="grid-2col">
           <div class="cyber-card" id="tamper-demo-card">
             <div class="card-title" style="color: #ef4444;">Tamper Defense Telemetry</div>
-            <div class="terminal-box" style="margin-top: 12px; border-color: rgba(239, 68, 68, 0.4);">
-<pre style="color: #f87171;"><code>[SYSTEM WARNING] Chain Verification Audit:
-Scanning 42 ratified blocks...
-[ERROR] Block #14 hash mismatch!
-Expected: 00003f9e8a71...
-Calculated: e891b2c401aa...
-Tampered Field: data.document.bylaws
-Action: Automatic quarantine of invalid branch.</code></pre>
+            <div class="chain-blocks-strip" id="tamper-chain-strip">
+              <div class="chain-block-node valid" id="node-block-01">BLK #01<br><span style="color:#22c55e;">VALID</span></div>
+              <span class="chain-link-arrow">➔</span>
+              <div class="chain-block-node valid" id="node-block-02">BLK #02<br><span style="color:#22c55e;">VALID</span></div>
+              <span class="chain-link-arrow">➔</span>
+              <div class="chain-block-node valid" id="node-block-03">BLK #03<br><span style="color:#22c55e;">TARGET</span></div>
+              <span class="chain-link-arrow">➔</span>
+              <div class="chain-block-node valid" id="node-block-04">BLK #04<br><span style="color:#22c55e;">VALID</span></div>
+              <span class="chain-link-arrow">➔</span>
+              <div class="chain-block-node valid" id="node-block-05">BLK #05<br><span style="color:#22c55e;">TIP</span></div>
+            </div>
+            <div class="terminal-box" id="tamper-terminal" style="margin-top: 10px; border-color: rgba(34, 197, 94, 0.4);">
+<pre style="color: #86efac;" id="tamper-terminal-text"><code>[SYSTEM OK] Chain Verification Audit:
+Scanning 5 ratified blocks...
+All block hashes verified.
+Integrity score: 100.0%
+Cascade verification: PASS</code></pre>
             </div>
             <div class="substep" style="margin-top: 14px; font-size: 12px; color: #ef4444;">
               ✦ Zero tolerance for retroactive amendment fraud.
@@ -497,18 +649,31 @@ Action: Automatic quarantine of invalid branch.</code></pre>
           </div>
 
           <div class="cyber-panel-sub">
-            <h3 style="font-family: var(--font-display); font-size: 16px; margin-bottom: 12px; color: var(--text-main);">
-              Simulate Hostile Attack
+            <h3 style="font-family: var(--font-display); font-size: 16px; margin-bottom: 8px; color: var(--text-main);">
+              Interactive Tamper Attack & Healing
             </h3>
-            <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
-              Trigger an emergency defense alarm with high-voltage lightning strikes and viewport vibration.
+            <p style="font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+              Simulate an unauthorized modification in historical Block #03 and watch the cryptographic hash cascade fail instantly, followed by automated consensus recovery.
             </p>
-            <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="display: flex; flex-direction: column; gap: 10px;">
               <button id="btn-tamper-simulate-attack" class="fx-trigger-btn btn-fire" style="border-color: #ef4444; color: #ef4444;">
-                ⚡ Trigger Tamper Attack Alarm
+                ⚡ Inject Tamper Mutation into Block #03
+              </button>
+              <button id="btn-tamper-restore" class="fx-trigger-btn" style="border-color: #22c55e; color: #22c55e;">
+                🛡️ Restore Consensus & Re-anchor
               </button>
             </div>
           </div>
+        </div>
+
+        <div class="notes">
+          <p><strong>Presenter Notes - Station 07: Cryptographic Tamper Defense:</strong></p>
+          <ul>
+            <li>In conventional corporate record keeping, a malicious insider or compromised admin could alter historical records without detection.</li>
+            <li>In LegitBlock, every block hash incorporates the hash of its parent. Mutating a single character in Block #03 invalidates the hashes of Block #04, Block #05, and all descendants.</li>
+            <li>Interactive demo: Click "Inject Tamper Mutation". Notice how Block #03 flashes corrupted, downstream blocks fail verification, and an audio alarm sounds.</li>
+            <li>Click "Restore Consensus" to demonstrate automated gossip recovery where honest nodes reject the fork and re-align with verified chain state.</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -562,6 +727,16 @@ Action: Automatic quarantine of invalid branch.</code></pre>
             ⚡ Unleash Full Multi-Element Storm
           </button>
         </div>
+
+        <div class="notes">
+          <p><strong>Presenter Notes - Station 08: Unified Architecture:</strong></p>
+          <ul>
+            <li>LegitBlock was engineered as a modular monorepo: core headless logic, CLI terminal, and web dashboard.</li>
+            <li>@legitblock/utils is zero-dependency (using native Web Crypto API and pure algorithms), making it runnable in Node, Bun, Cloudflare Workers, or in-browser.</li>
+            <li>The CLI provides an interactive terminal user interface (Ink/React) for governance operations and devops automation.</li>
+            <li>The Next.js web application gives non-technical stakeholders an intuitive portal to inspect redlines and cast ballots.</li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -605,6 +780,16 @@ chain.<span class="code-func">initializeGenesisBlock</span>();
             ✦ VIEW 3D CONSTELLATION
           </button>
         </div>
+
+        <div class="notes">
+          <p><strong>Presenter Notes - Station 09: Quickstart & Integration:</strong></p>
+          <ul>
+            <li>Demonstrate how trivial it is to embed LegitBlock: install via pnpm/npm and import into any backend or frontend app.</li>
+            <li>Three-line setup: Select a template (e.g. for-profit-c-corp), instantiate the Blockchain, initialize genesis.</li>
+            <li>All governance methods return structured typed results with pass/fail statuses and merkle payload proofs.</li>
+            <li>Direct audience to the GitHub repository and documentation site for full API reference.</li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -628,6 +813,9 @@ chain.<span class="code-func">initializeGenesisBlock</span>();
             <span>RADIUS: <strong>9,000 PX</strong></span>
             <span>ENGINE: <strong>@tekromancy/tekromancy</strong></span>
             <span>STANDARD: <strong>DGCL § 224</strong></span>
+            <button id="btn-auto-orbit" class="hud-btn" style="padding: 2px 10px; margin-left: 8px;" title="Toggle continuous celestial globe auto-rotation">
+              <span>🔄 Auto-Orbit: OFF</span>
+            </button>
           </div>
         </div>
 
@@ -713,6 +901,16 @@ chain.<span class="code-func">initializeGenesisBlock</span>();
             <div class="orbital-node-coords">Lat -48° / Lon 360°</div>
           </div>
         </div>
+
+        <div class="notes">
+          <p><strong>Presenter Notes - Station 10: 3D Constellation Overview:</strong></p>
+          <ul>
+            <li>Zoom out to the celestial macro view of the entire 9,000px governance sphere.</li>
+            <li>Recap the journey: From the Genesis Gateway through the core SHA-256 ledger, diff engine, democratic voting, enterprise identity, and tamper defense.</li>
+            <li>Invite questions from the board, investors, or open-source contributors.</li>
+            <li>Audience members can click any orbital node card to zoom directly back to that station.</li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -730,17 +928,43 @@ chain.<span class="code-func">initializeGenesisBlock</span>();
 
     <div class="hud-hints">
       <span>NAVIGATE: <kbd>Space</kbd> / <kbd>→</kbd> / <kbd>←</kbd></span>
+      <span>NOTES: <kbd>P</kbd></span>
       <span>CONSTELLATION: <kbd>O</kbd></span>
+      <span>ECO: <kbd>B</kbd></span>
       <span>LIGHTNING: <kbd>L</kbd></span>
       <span>FIRE: <kbd>F</kbd></span>
-      <span>PLASMA: <kbd>P</kbd></span>
       <span>SOUND: <kbd>M</kbd></span>
+      <span>GYRO: <kbd>G</kbd></span>
     </div>
 
     <div>
       POWERED BY <strong style="color: var(--cyan);">@tekromancy/tekromancy</strong>
     </div>
   </footer>
+
+  <!-- DGCL § 224 Certificate Modal -->
+  <div id="certificate-modal" class="modal-backdrop" aria-hidden="true" style="display: none;">
+    <div class="modal-content">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid rgba(251, 191, 36, 0.4); padding-bottom: 8px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 20px;">📜</span>
+          <span style="font-family: var(--font-display); font-size: 13px; font-weight: bold; color: var(--gold); letter-spacing: 1px;">DELAWARE DGCL § 224 BLOCKCHAIN ATTESTATION CERTIFICATE</span>
+        </div>
+        <button id="btn-close-certificate" class="hud-btn" style="padding: 4px 10px;">✕</button>
+      </div>
+
+      <div class="terminal-box" id="certificate-preview-box" style="font-size: 11px; max-height: 300px; overflow-y: auto; border-color: rgba(251, 191, 36, 0.3);">
+        <pre><code id="certificate-text"></code></pre>
+      </div>
+
+      <div style="display: flex; gap: 10px; margin-top: 14px; justify-content: flex-end; align-items: center;">
+        <span id="cert-copy-feedback" style="font-size: 11px; font-family: var(--font-mono); color: #4ade80; display: none;">✔ Copied!</span>
+        <button id="btn-copy-cert-json" class="hud-btn">📋 Copy JSON</button>
+        <button id="btn-download-cert" class="hud-btn">💾 Download .txt</button>
+        <button id="btn-print-cert" class="cyber-cta-btn" style="padding: 8px 16px; font-size: 11px;">🖨️ Print Attestation</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="./js/impress.js"></script>

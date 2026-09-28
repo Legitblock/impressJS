@@ -795,3 +795,224 @@ pre.code-box {
   font-size: 10px;
   color: var(--text-muted);
 }
+
+/* =========================================================================
+   INTERACTIVE SANDBOXES STYLES
+   ========================================================================= */
+
+/* Speaker Notes (Hidden on main screen, visible in impressConsole with Key P) */
+.notes {
+  display: none;
+}
+
+/* Mining Sandbox */
+.sandbox-mining-input {
+  width: 100%;
+  background: rgba(3, 7, 18, 0.9);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  outline: none;
+}
+
+.sandbox-mining-input:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+.mining-status-bar {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 6px 10px;
+  background: rgba(0, 240, 255, 0.08);
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* Diff Clause Selector Dropdown */
+.clause-select-dropdown {
+  width: 100%;
+  background: rgba(10, 16, 32, 0.95);
+  border: 1px solid rgba(255, 102, 0, 0.4);
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  margin-bottom: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Voting Voter Badges */
+.voter-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.voter-card {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.voter-card:hover {
+  border-color: var(--plasma);
+  background: rgba(25, 35, 60, 0.9);
+}
+
+.voter-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.voter-role {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.voter-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.vote-yes {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.4);
+}
+
+.vote-no {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.vote-abstain {
+  background: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.4);
+}
+
+/* Tamper Defense Block Chain Visualizer */
+.chain-blocks-strip {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.chain-block-node {
+  background: rgba(12, 20, 40, 0.9);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  border-radius: 6px;
+  padding: 8px 12px;
+  min-width: 90px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  transition: all 0.3s ease;
+}
+
+.chain-block-node.corrupted {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.15);
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+  color: #fca5a5;
+}
+
+.chain-block-node.valid {
+  border-color: #22c55e;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.3);
+}
+
+.chain-link-arrow {
+  color: var(--cyan);
+  font-size: 12px;
+}
+
+/* =========================================================================
+   CERTIFICATE MODAL DIALOG
+   ========================================================================= */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(3, 7, 18, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 650px;
+  background: rgba(10, 16, 32, 0.98);
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 0 50px rgba(251, 191, 36, 0.25);
+  animation: modalIn 0.25s ease-out;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* =========================================================================
+   ECO / BATTERY SAVER MODE
+   ========================================================================= */
+body.eco-mode * {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+body.eco-mode #globe-wireframe-container .globe-ring {
+  box-shadow: none !important;
+  border-width: 1px !important;
+}
+
+body.eco-mode .cyber-card,
+body.eco-mode .cyber-panel {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background: rgba(10, 16, 32, 0.95) !important;
+}
+
+/* 3D Pointer Parallax Card Tilt */
+.cyber-card {
+  transform: perspective(1000px) rotateY(var(--tilt-y, 0deg)) rotateX(var(--tilt-x, 0deg));
+  transition: transform 0.1s ease-out, border-color 0.3s ease, background 0.3s ease;
+}
+

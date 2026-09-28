@@ -321,6 +321,9 @@
     setActiveStation(id) {
       activeStationId = id;
     },
+    setEcoMode(enabled) {
+      isEcoMode = !!enabled;
+    },
     destroy() {
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
       window.removeEventListener('resize', resize);

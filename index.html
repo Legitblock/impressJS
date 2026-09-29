@@ -794,7 +794,223 @@ chain.<span class="code-func">initializeGenesisBlock</span>();
     </div>
 
     <!-- ================================================================= -->
-    <!-- STATION 10: 3D CONSTELLATION OVERVIEW                            -->
+    <!-- STATION 10: MERKLE TREE AUDIT TRAILS & ZERO-KNOWLEDGE COVENANTS   -->
+    <!-- (5213, -5162, 5213) - Lat +35, Lon 405 (45)                       -->
+    <!-- ================================================================= -->
+    <div id="station-merkle-zk" class="step"
+         data-x="5213" data-y="-5162" data-z="5213"
+         data-rotate-x="-35" data-rotate-y="405" data-rotate-z="360"
+         data-scale="1"
+         data-title="Merkle & ZK Covenants"
+         data-lightning="65" data-plasma="45">
+
+      <div class="cyber-panel">
+        <div class="station-meta-badge">STATION 10 // CRYPTOGRAPHIC PRIVACY & VERIFICATION</div>
+        <h2 class="station-title">MERKLE CLAUSE AUDIT &amp; ZERO-KNOWLEDGE COVENANTS</h2>
+        <p class="station-lead">
+          Verify corporate clause inclusion under DGCL § 224 without disclosing confidential bylaws. Enforce balance sheet covenants with non-interactive zero-knowledge range proofs over RFC 3526 prime subgroups.
+        </p>
+
+        <div class="cyber-grid-3">
+          <div class="cyber-card" style="border-top: 3px solid var(--water);">
+            <div class="cyber-card-header">
+              <span class="card-icon">🌲</span>
+              <h3 class="card-title">RFC 6962 Domain Merkle Trees</h3>
+            </div>
+            <p class="card-desc">
+              Domain-separated prefixes (0x00 leaf, 0x01 branch) prevent length extension and second-preimage collision attacks during independent clause verification.
+            </p>
+            <div class="code-preview-compact">
+              <code>H_leaf = sha256(0x00 || sha256(clause))</code>
+              <code>H_branch = sha256(0x01 || left || right)</code>
+            </div>
+          </div>
+
+          <div class="cyber-card" style="border-top: 3px solid var(--plasma);">
+            <div class="cyber-card-header">
+              <span class="card-icon">🛡️</span>
+              <h3 class="card-title">Pedersen Commitments</h3>
+            </div>
+            <p class="card-desc">
+              Homomorphic commitments C = g^v * h^r mod P provide information-theoretic privacy for financial metrics while remaining computationally binding.
+            </p>
+            <div class="code-preview-compact">
+              <code>Commitment: C = g^value * h^blinding mod P</code>
+              <code>Homomorphic: C(a + b) = C(a) * C(b) mod P</code>
+            </div>
+          </div>
+
+          <div class="cyber-card" style="border-top: 3px solid var(--cyan);">
+            <div class="cyber-card-header">
+              <span class="card-icon">🔐</span>
+              <h3 class="card-title">Zero-Knowledge Range Proofs</h3>
+            </div>
+            <p class="card-desc">
+              Prove treasury balances or revenues satisfy constitutional charter covenants (e.g. >= $10M) without disclosing actual corporate financials to the public.
+            </p>
+            <div class="code-preview-compact">
+              <code>ZkRangeProofEngine.proveGreaterOrEqual(val, min)</code>
+              <code>ZkRangeProofEngine.verifyProof(C, min, proof)</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="presenter-notes">
+          <p><strong>Presenter Notes - Station 10: Merkle Inclusion & ZK Covenants:</strong></p>
+          <ul>
+            <li>Highlight that Delaware DGCL § 224 allows section-level proofs: companies can provide single clauses to banks or partners without leaking the entire charter.</li>
+            <li>Explain how ZK range proofs enforce constitutional bylaws (e.g., debt covenants, runway reserves) before an expenditure proposal can even be voted on.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- STATION 11: POST-QUANTUM CRYPTOGRAPHY & WEBAUTHN PASSKEYS         -->
+    <!-- (8157, 3803, 0) - Lat -25, Lon 450 (90)                           -->
+    <!-- ================================================================= -->
+    <div id="station-pqc-webauthn" class="step"
+         data-x="8157" data-y="3803" data-z="0"
+         data-rotate-x="25" data-rotate-y="450" data-rotate-z="360"
+         data-scale="1"
+         data-title="Post-Quantum & WebAuthn"
+         data-plasma="75" data-lightning="60">
+
+      <div class="cyber-panel">
+        <div class="station-meta-badge">STATION 11 // QUANTUM RESILIENCE & HARDWARE AUTH</div>
+        <h2 class="station-title">POST-QUANTUM HYBRID SIGNATURES &amp; WEBAUTHN PASSKEYS</h2>
+        <p class="station-lead">
+          NIST ML-DSA-44 (Dilithium) lattice cryptography dual-asserted with classical Ed25519 protects corporate records against future quantum computers. FIDO2 passkeys and PRF hardware encryption secure boardroom filings.
+        </p>
+
+        <div class="cyber-grid-3">
+          <div class="cyber-card" style="border-top: 3px solid var(--plasma);">
+            <div class="cyber-card-header">
+              <span class="card-icon">⚛️</span>
+              <h3 class="card-title">NIST ML-DSA-44 Lattice PQC</h3>
+            </div>
+            <p class="card-desc">
+              Ring-SIS polynomial lattice math provides provable post-quantum resistance against Shor's algorithm, with exact Fiat-Shamir verification.
+            </p>
+            <div class="code-preview-compact">
+              <code>PqcHybridSigner.sign(payload, hybridKey)</code>
+              <code>Dual Verification: Ed25519 && ML-DSA-44</code>
+            </div>
+          </div>
+
+          <div class="cyber-card" style="border-top: 3px solid var(--cyan);">
+            <div class="cyber-card-header">
+              <span class="card-icon">🔑</span>
+              <h3 class="card-title">FIDO2 Hardware Passkeys</h3>
+            </div>
+            <p class="card-desc">
+              Touch ID, Windows Hello, and YubiKeys provide non-exportable hardware-backed authentication, eliminating corporate password compromise vectors.
+            </p>
+            <div class="code-preview-compact">
+              <code>WebAuthn Level 3 Authenticator Assertion</code>
+              <code>ES256 / Ed25519 Hardware Secure Enclave</code>
+            </div>
+          </div>
+
+          <div class="cyber-card" style="border-top: 3px solid var(--gold);">
+            <div class="cyber-card-header">
+              <span class="card-icon">🔒</span>
+              <h3 class="card-title">WebAuthn PRF Encryption</h3>
+            </div>
+            <p class="card-desc">
+              Derives high-entropy AES-256-GCM symmetric encryption keys directly from hardware authenticators using the W3C WebAuthn PRF extension.
+            </p>
+            <div class="code-preview-compact">
+              <code>Key = HKDF(PRF_Output, Salt, "LegitBlock-PRF")</code>
+              <code>AES-256-GCM Document Encryption At Rest</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="presenter-notes">
+          <p><strong>Presenter Notes - Station 11: Post-Quantum & Hardware Passkeys:</strong></p>
+          <ul>
+            <li>Corporate charters have multi-decade lifespans: classical ECC may fall to Shor's algorithm within 10-15 years, requiring hybrid quantum resistance now.</li>
+            <li>WebAuthn PRF allows directors to decrypt board materials using only their physical YubiKey or Touch ID sensor without storing keys on any cloud server.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- STATION 12: STATUTORY RECUSAL, TIMELOCKS & EVM TREASURY BRIDGE    -->
+    <!-- (5980, -3078, -5980) - Lat +20, Lon 495 (135)                     -->
+    <!-- ================================================================= -->
+    <div id="station-evm-recusal" class="step"
+         data-x="5980" data-y="-3078" data-z="-5980"
+         data-rotate-x="-20" data-rotate-y="495" data-rotate-z="360"
+         data-scale="1"
+         data-title="Recusal & EVM Bridge"
+         data-lightning="80" data-water="60">
+
+      <div class="cyber-panel">
+        <div class="station-meta-badge">STATION 12 // STATUTORY HARMONIZATION & TREASURY</div>
+        <h2 class="station-title">STATUTORY RECUSAL (DGCL § 144) &amp; EVM SAFE BRIDGE</h2>
+        <p class="station-lead">
+          Automated conflict-of-interest recusals enforce disinterested director quorums. Execution timelocks allow emergency compliance vetoes, while the EVM bridge executes verified payouts directly via Gnosis Safe.
+        </p>
+
+        <div class="cyber-grid-3">
+          <div class="cyber-card" style="border-top: 3px solid var(--fire);">
+            <div class="cyber-card-header">
+              <span class="card-icon">⚖️</span>
+              <h3 class="card-title">DGCL § 144 Recusal Engine</h3>
+            </div>
+            <p class="card-desc">
+              Automatically subtracts interested directors from voting power and quorum calculations. Issues statutory compliance certificates for legal immunity.
+            </p>
+            <div class="code-preview-compact">
+              <code>RecusalEngine.registerRecusal(propId, member)</code>
+              <code>Disinterested Quorum = TotalEligible - Recused</code>
+            </div>
+          </div>
+
+          <div class="cyber-card" style="border-top: 3px solid var(--water);">
+            <div class="cyber-card-header">
+              <span class="card-icon">⏱️</span>
+              <h3 class="card-title">Timelocks &amp; Emergency Veto</h3>
+            </div>
+            <p class="card-desc">
+              Ratified proposals enter a statutory cooling-off queue (e.g., 48 hours). Authorized compliance officers can exercise an emergency veto to prevent ultra vires actions.
+            </p>
+            <div class="code-preview-compact">
+              <code>ProposalStatus.QUEUED -> TIMELOCK_DELAY</code>
+              <code>VotingEngine.vetoProposal(propId, officer)</code>
+            </div>
+          </div>
+
+          <div class="cyber-card" style="border-top: 3px solid var(--plasma);">
+            <div class="cyber-card-header">
+              <span class="card-icon">🌐</span>
+              <h3 class="card-title">Gnosis Safe &amp; EVM Bridge</h3>
+            </div>
+            <p class="card-desc">
+              Encodes ERC-20 transfers and arbitrary smart contract interactions into ABI-compliant execTransaction calldata and EIP-712 typed data envelopes.
+            </p>
+            <div class="code-preview-compact">
+              <code>EvmBridge.buildSafeTransactionPayload(...)</code>
+              <code>EIP-712 Corporate Resolution Manifest</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="presenter-notes">
+          <p><strong>Presenter Notes - Station 12: Recusal, Timelocks & EVM Bridge:</strong></p>
+          <ul>
+            <li>Delaware Section 144 requires interested director transactions to be approved by a majority of disinterested directors: LegitBlock automates this math at the cryptographic level.</li>
+            <li>Connects off-chain legal democracy with on-chain crypto capital: a board vote in LegitBlock triggers multi-sig treasury disbursement without intermediary custody risk.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- STATION 13: 3D CONSTELLATION OVERVIEW                            -->
     <!-- Overview at (0, 0, 24000) with scale 18                           -->
     <!-- ================================================================= -->
     <div id="overview" class="step"
@@ -806,10 +1022,10 @@ chain.<span class="code-func">initializeGenesisBlock</span>();
 
       <div class="overview-zone-container">
         <div class="overview-header-zone">
-          <div class="station-meta-badge">STATION 10 // GLOBAL CONSTELLATION</div>
+          <div class="station-meta-badge">STATION 13 // GLOBAL CONSTELLATION</div>
           <h2 class="portal-hero-title" style="font-size: 38px;">LEGITBLOCK ARCHITECTURE</h2>
           <div class="overview-telemetry-strip">
-            <span>TOTAL NODES: <strong>09 STATIONS</strong></span>
+            <span>TOTAL NODES: <strong>12 STATIONS</strong></span>
             <span>RADIUS: <strong>9,000 PX</strong></span>
             <span>ENGINE: <strong>@tekromancy/tekromancy</strong></span>
             <span>STANDARD: <strong>DGCL § 224</strong></span>
@@ -900,14 +1116,40 @@ chain.<span class="code-func">initializeGenesisBlock</span>();
             <div class="orbital-node-title">QUICKSTART</div>
             <div class="orbital-node-coords">Lat -48° / Lon 360°</div>
           </div>
+
+          <div class="orbital-node-card" data-goto="station-merkle-zk" style="border-top: 3px solid #10b981;">
+            <div class="orbital-node-top">
+              <span class="orbital-node-badge" style="color: #10b981;">10</span>
+              <span class="orbital-node-glyph">🌲</span>
+            </div>
+            <div class="orbital-node-title">MERKLE &amp; ZK</div>
+            <div class="orbital-node-coords">Lat +35° / Lon 45°</div>
+          </div>
+
+          <div class="orbital-node-card" data-goto="station-pqc-webauthn" style="border-top: 3px solid #ec4899;">
+            <div class="orbital-node-top">
+              <span class="orbital-node-badge" style="color: #ec4899;">11</span>
+              <span class="orbital-node-glyph">⚛️</span>
+            </div>
+            <div class="orbital-node-title">PQC &amp; WEBAUTHN</div>
+            <div class="orbital-node-coords">Lat -25° / Lon 90°</div>
+          </div>
+
+          <div class="orbital-node-card" data-goto="station-evm-recusal" style="border-top: 3px solid #6366f1;">
+            <div class="orbital-node-top">
+              <span class="orbital-node-badge" style="color: #6366f1;">12</span>
+              <span class="orbital-node-glyph">⚖️</span>
+            </div>
+            <div class="orbital-node-title">RECUSAL &amp; EVM</div>
+            <div class="orbital-node-coords">Lat +20° / Lon 135°</div>
+          </div>
         </div>
 
         <div class="notes">
-          <p><strong>Presenter Notes - Station 10: 3D Constellation Overview:</strong></p>
+          <p><strong>Presenter Notes - Station 13: 3D Constellation Overview:</strong></p>
           <ul>
-            <li>Zoom out to the celestial macro view of the entire 9,000px governance sphere.</li>
-            <li>Recap the journey: From the Genesis Gateway through the core SHA-256 ledger, diff engine, democratic voting, enterprise identity, and tamper defense.</li>
-            <li>Invite questions from the board, investors, or open-source contributors.</li>
+            <li>Zoom out to the celestial macro view of the entire 9,000px governance sphere with all 12 stations.</li>
+            <li>Recap the full journey: From Genesis through SHA-256 ledgers, democratic voting, enterprise identity, tamper defense, Merkle clause trees, zero-knowledge financial covenants, post-quantum ML-DSA-44 lattice cryptography, WebAuthn passkeys, statutory DGCL § 144 recusal, and on-chain EVM multi-sig treasury bridges.</li>
             <li>Audience members can click any orbital node card to zoom directly back to that station.</li>
           </ul>
         </div>

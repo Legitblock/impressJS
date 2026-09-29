@@ -53,7 +53,16 @@ const stationController = new StationFXController({
   // Station 09: Developer quickstart - dynamic fluid rain & electricity
   'station-quickstart': { water: 75, lightning: 65, plasma: 60 },
 
-  // Station 10: 3D Constellation overview - grand celestial overview
+  // Station 10: Merkle Inclusion & ZK Covenants
+  'station-merkle-zk': { lightning: 65, ice: 50, plasma: 40 },
+
+  // Station 11: Post-Quantum ML-DSA-44 & WebAuthn PRF
+  'station-pqc-webauthn': { plasma: 75, lightning: 60, fire: 30 },
+
+  // Station 12: Statutory Recusal & EVM Safe Bridge
+  'station-evm-recusal': { lightning: 80, water: 65, plasma: 50 },
+
+  // Station 13: 3D Constellation overview - grand celestial overview
   'overview': { lightning: 80, plasma: 75, fire: 50 }
 }, {
   defaultSettings: { lightning: 25 }
@@ -370,6 +379,9 @@ function initShowcase() {
     'station-tamper-defense': 'Cryptographic tamper defense isolates fraudulent block modifications within milliseconds.',
     'station-unified-demo': 'Interactive console execution. Mine blocks, verify chains, and inspect minute book audit trails directly in the browser.',
     'station-quickstart': 'Launch your cryptographic corporate ledger in minutes using the LegitBlock CLI or Next.js portal.',
+    'station-merkle-zk': 'Zero-knowledge range proofs and Merkle inclusion trees guarantee constitutional covenant compliance without disclosing private corporate terms.',
+    'station-pqc-webauthn': 'Post-quantum ML-DSA-44 lattice cryptography combines with FIDO2 WebAuthn hardware passkeys and PRF document encryption for maximum defense in depth.',
+    'station-evm-recusal': 'Statutory DGCL section 144 disinterested director recusal and time-lock execution queues bridge seamlessly to Gnosis Safe EVM treasuries.',
     'overview': 'Viewing the complete organizational galaxy constellation.'
   };
 

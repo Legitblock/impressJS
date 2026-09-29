@@ -57,7 +57,10 @@
     { id: 'station-enterprise-ldap', num: '06', name: 'LDAP AUTH', lat: 28, lon: 225, color: '#22c55e', glow: 'rgba(34,197,94,0.85)' },
     { id: 'station-tamper-defense', num: '07', name: 'TAMPER DEFENSE', lat: -24, lon: 270, color: '#93c5fd', glow: 'rgba(147,197,253,0.85)' },
     { id: 'station-unified-demo', num: '08', name: 'FULL STACK', lat: 30, lon: 315, color: '#a855f7', glow: 'rgba(168,85,247,0.85)' },
-    { id: 'station-quickstart', num: '09', name: 'QUICKSTART', lat: -48, lon: 360, color: '#00f0ff', glow: 'rgba(0,240,255,0.85)' }
+    { id: 'station-quickstart', num: '09', name: 'QUICKSTART', lat: -48, lon: 360, color: '#00f0ff', glow: 'rgba(0,240,255,0.85)' },
+    { id: 'station-merkle-zk', num: '10', name: 'MERKLE & ZK', lat: 35, lon: 405, color: '#10b981', glow: 'rgba(16,185,129,0.85)' },
+    { id: 'station-pqc-webauthn', num: '11', name: 'PQC & WEBAUTHN', lat: -25, lon: 450, color: '#ec4899', glow: 'rgba(236,72,153,0.85)' },
+    { id: 'station-evm-recusal', num: '12', name: 'RECUSAL & EVM', lat: 20, lon: 495, color: '#6366f1', glow: 'rgba(99,102,241,0.85)' }
   ];
 
   // Traveling pulses
